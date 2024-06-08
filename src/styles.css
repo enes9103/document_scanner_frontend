@@ -1,3 +1,79 @@
-body {
-  display: block;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #root {
+    @apply h-full;
+  }
+
+  body {
+    @apply h-full min-h-dvh bg-white font-sans text-primary;
+  }
+
+  .container {
+    @apply mx-auto flex w-full max-w-1200px flex-col items-center justify-center px-3;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+}
+
+@layer components {
+  .animate-svg circle {
+    transform-origin: center;
+    rotate: 270deg;
+    stroke: theme('colors.secondary');
+    stroke-dasharray: 173;
+    stroke-dashoffset: 173;
+    stroke-opacity: 1;
+    stroke-width: 1px;
+    animation: climb 0.5s linear;
+    animation-fill-mode: forwards;
+  }
+
+  .animate-svg path {
+    fill: theme('colors.secondary');
+    transition: fill 0.135ms ease-in-out;
+  }
+
+  .link-style {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    border: 1px solid var(--neutral-200);
+    padding: 0.75rem 1rem;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  }
+  
+  .link-style:hover,
+  .link-style:focus {
+    border-color: #0381FF;
+    background-color: #0381FF;
+    color: white;
+  }
+  
+  @media (min-width: 1024px) {
+    .link-style {
+      margin-bottom: 1rem;
+      padding: 1rem 1.25rem;
+      font-size: 1.25rem;
+    }
+  }
+  
+}
+
+@keyframes climb {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
