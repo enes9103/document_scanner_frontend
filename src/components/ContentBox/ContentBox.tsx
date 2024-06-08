@@ -1,21 +1,26 @@
 import React, { ReactNode } from 'react';
+// Framer Motion
 import { motion } from 'framer-motion';
+// Components
 import Link, { LinkProps } from '../Base/Link';
 import ContentBoxHeader from './ContentBoxHeader';
 import ContentBoxImage from './ContentBoxImage';
 
+// Props for the header section of the ContentBox component
 interface ContentBoxHeaderProps {
   title: string;
   actionTitle: string;
   description: string;
 }
 
+// Props for the image section of the ContentBox component
 interface ContentBoxImageProps {
   mobileImageUrl: string;
   desktopImageUrl: string;
   alt: string;
 }
 
+// Props for the ContentBox component
 export interface ContentBoxProps
   extends ContentBoxHeaderProps,
     ContentBoxImageProps,
@@ -71,6 +76,7 @@ const ContentBox = ({
   );
 };
 
+// Attach header, image, and action button components as properties to the ContentBox component
 ContentBox.Header = ContentBoxHeader;
 ContentBox.Image = ContentBoxImage;
 ContentBox.ActionButton = Link;
