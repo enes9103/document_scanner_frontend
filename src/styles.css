@@ -25,6 +25,7 @@
   /* Hide scrollbar for IE, Edge and Firefox */
   .hide-scrollbar {
     scrollbar-width: none; /* Firefox */
+
     -ms-overflow-style: none; /* IE and Edge */
   }
 }
@@ -33,11 +34,13 @@
   .animate-svg circle {
     transform-origin: center;
     rotate: 270deg;
+
     stroke: theme('colors.secondary');
     stroke-dasharray: 173;
     stroke-dashoffset: 173;
     stroke-opacity: 1;
     stroke-width: 1px;
+
     animation: climb 0.5s linear;
     animation-fill-mode: forwards;
   }
@@ -48,28 +51,33 @@
   }
 
   .link-style {
-    margin-bottom: 0.5rem;
     display: inline-block;
-    border: 1px solid var(--neutral-200);
+
+    margin-bottom: 0.5rem;
     padding: 0.75rem 1rem;
-    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+
+    border: 1px solid var(--neutral-200);
+
+    transition:
+      border-color 0.3s,
+      background-color 0.3s,
+      color 0.3s;
   }
-  
+
   .link-style:hover,
   .link-style:focus {
-    border-color: #0381FF;
-    background-color: #0381FF;
     color: white;
+    background-color: #0381ff;
+    border-color: #0381ff;
   }
-  
-  @media (min-width: 1024px) {
+
+  @media (width >= 1024px) {
     .link-style {
       margin-bottom: 1rem;
       padding: 1rem 1.25rem;
       font-size: 1.25rem;
     }
   }
-  
 }
 
 @keyframes climb {

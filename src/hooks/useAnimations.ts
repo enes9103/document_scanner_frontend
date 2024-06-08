@@ -1,5 +1,16 @@
-import { useAdvancedFiltersAnimation, useBatchScanningAnimation, useExportShareAnimation, useSignStampAnimation } from './index';
-import { DOCUMENT_SCANNER, SIGN_STAMP, BATCH_SCANNING, ADVANCED_FILTERS, EXPORT_SHARE } from '../static/index';
+import {
+  useAdvancedFiltersAnimation,
+  useBatchScanningAnimation,
+  useExportShareAnimation,
+  useSignStampAnimation,
+} from './index';
+import {
+  DOCUMENT_SCANNER,
+  SIGN_STAMP,
+  BATCH_SCANNING,
+  ADVANCED_FILTERS,
+  EXPORT_SHARE,
+} from '../static/index';
 
 const useAnimations = () => {
   return {

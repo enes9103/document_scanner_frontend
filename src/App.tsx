@@ -1,15 +1,20 @@
 import React, { useState, useCallback } from 'react';
-import contents from './static/constant';
+// Custom Hooks
 import useAnimations from './hooks/useAnimations';
-import { Container, ContentBox, ContentTabButton } from './components/index';
+// Constants
 import { DOCUMENT_SCANNER } from './static/index';
+import contents from './static/constant';
+// Components
 import Layout from './components/Layout/Layout';
+import { Container, ContentBox, ContentTabButton } from './components/index';
 
 export const App: React.FC = () => {
   const [activeContent, setActiveContent] = useState(DOCUMENT_SCANNER);
 
+  // Custom hook to get animations for each content item
   const animations = useAnimations();
 
+  // Callback function to handle tab change
   const handleTabChange = useCallback(
     (clickedContent: string) => () => {
       setActiveContent(clickedContent);
@@ -20,6 +25,7 @@ export const App: React.FC = () => {
   return (
     <Layout>
       <section className="flex flex-col justify-center bg-baseBg overflow-y-auto min-h-full">
+        {/* Container to hold the content boxes */}
         <Container>
           {contents.map((content) =>
             activeContent === content.key ? (
@@ -33,6 +39,7 @@ export const App: React.FC = () => {
           )}
         </Container>
 
+        {/* Navigation bar for content tabs */}
         <nav className="flex justify-between overflow-x-auto snap-x hide-scrollbar">
           {contents.map((content) => (
             <ContentTabButton

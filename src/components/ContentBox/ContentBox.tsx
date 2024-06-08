@@ -16,7 +16,7 @@ interface ContentBoxImageProps {
   alt: string;
 }
 
-interface ContentBoxProps
+export interface ContentBoxProps
   extends ContentBoxHeaderProps,
     ContentBoxImageProps,
     Omit<LinkProps, 'linkTitle'> {
